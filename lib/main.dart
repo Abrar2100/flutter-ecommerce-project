@@ -1,27 +1,28 @@
-import 'package:final__pro/pages/home_page.dart';
-import 'package:final__pro/pages/onboarding.dart';
 import 'package:flutter/material.dart';
+import 'pages/onboarding_page.dart';
 import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 import 'pages/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'My Shop',
       debugShowCheckedModeBanner: false,
-      title: "My Store",
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: '/login',
+      initialRoute: "/onboarding",
       routes: {
-        '/onboarding': (context) => OnboardingPage(),
-        '/login': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
-        '/home': (context) => HomePage(),
+        "/onboarding": (context) => OnboardingPage(),
+        "/login": (context) => LoginPage(),
+        "/register": (context) => RegisterPage(),
+        "/home": (context) => HomePage(),
       },
     );
   }
